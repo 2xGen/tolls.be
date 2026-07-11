@@ -6,6 +6,7 @@ import { i18n, isLocale, ogLocales, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 import { getPrivacyPath } from "@/lib/i18n/legal";
 import { siteConfig } from "@/lib/site";
+import { getSharedOgMetadata } from "@/lib/metadata";
 import { CookieConsentProvider } from "@/components/cookies/CookieConsentContext";
 import ConsentAnalytics from "@/components/cookies/ConsentAnalytics";
 
@@ -32,6 +33,8 @@ export async function generateMetadata({
   const languageAlternates = Object.fromEntries(
     i18n.locales.map((l) => [l, `/${l}`]),
   );
+
+  const sharedOg = getSharedOgMetadata();
 
   return {
     metadataBase: new URL(siteConfig.url),
@@ -60,11 +63,12 @@ export async function generateMetadata({
       url: path,
       title: dict.meta.title,
       description: dict.meta.description,
+      ...sharedOg.openGraph,
     },
     twitter: {
-      card: "summary_large_image",
       title: dict.meta.title,
       description: dict.meta.description,
+      ...sharedOg.twitter,
     },
     robots: {
       index: true,

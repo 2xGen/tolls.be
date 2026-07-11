@@ -13,6 +13,7 @@ import {
 } from "@/lib/i18n/legal";
 import { getLegalDictionary } from "@/lib/i18n/legal-dictionaries";
 import { siteConfig } from "@/lib/site";
+import { getSharedOgMetadata } from "@/lib/metadata";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter";
@@ -43,6 +44,7 @@ export async function generateMetadata({
   const { lang, slug } = await params;
   if (!isLocale(lang)) return {};
 
+  const sharedOg = getSharedOgMetadata();
   const legalKey = getLegalKeyBySlug(lang, slug);
   if (legalKey) {
     const legalDict = await getLegalDictionary(lang);
@@ -68,6 +70,12 @@ export async function generateMetadata({
         url: path,
         title: content.meta.title,
         description: content.meta.description,
+        ...sharedOg.openGraph,
+      },
+      twitter: {
+        title: content.meta.title,
+        description: content.meta.description,
+        ...sharedOg.twitter,
       },
       robots: { index: true, follow: true },
     };
@@ -98,11 +106,12 @@ export async function generateMetadata({
       url: path,
       title: content.meta.title,
       description: content.meta.description,
+      ...sharedOg.openGraph,
     },
     twitter: {
-      card: "summary_large_image",
       title: content.meta.title,
       description: content.meta.description,
+      ...sharedOg.twitter,
     },
   };
 }
