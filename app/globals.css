@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    @apply bg-white text-charcoal antialiased;
+    font-feature-settings: "kern";
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Consistent, visible focus for keyboard users. */
+  :focus-visible {
+    @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-white;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply text-navy;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+@layer components {
+  .container-gov {
+    @apply mx-auto w-full max-w-content px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-gov px-5 py-3 text-base font-semibold transition-colors focus-visible:ring-2 focus-visible:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply btn bg-navy text-white hover:bg-navy-700;
+  }
+
+  .btn-secondary {
+    @apply btn border-2 border-navy bg-white text-navy hover:bg-mist;
+  }
+
+  .section {
+    @apply py-14 sm:py-16 lg:py-20;
+  }
+
+  .section-title {
+    @apply text-2xl font-bold tracking-tight sm:text-3xl;
+  }
+
+  .prose-gov p {
+    @apply text-lg leading-relaxed text-charcoal;
+  }
+}
