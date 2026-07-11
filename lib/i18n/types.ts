@@ -85,8 +85,11 @@ export interface Dictionary {
     emailLabel: string;
     emailPlaceholder: string;
     button: string;
-    consent: string;
+    consentBefore: string;
+    consentAfter: string;
     success: string;
+    error: string;
+    submitting: string;
   };
   footer: {
     description: string;
@@ -100,5 +103,27 @@ export interface Dictionary {
   breadcrumb: {
     home: string;
     current: string;
+  };
+  cookies: {
+    bannerTitle: string;
+    bannerDescription: string;
+    privacyLink: string;
+    acceptAll: string;
+    rejectNonEssential: string;
+    managePreferences: string;
+    preferencesTitle: string;
+    savePreferences: string;
+    close: string;
+    essentialTitle: string;
+    essentialDescription: string;
+    essentialAlwaysOn: string;
+    analyticsTitle: string;
+    analyticsDescription: string;
+    services: {
+      vercel: string;
+      google: string;
+      bing: string;
+    };
+    manageLabel: string;
   };
 }

@@ -5,10 +5,18 @@ import { i18n, isLocale, ogLocales } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 import { getPagesDictionary } from "@/lib/i18n/pages-dictionaries";
 import { pageKeys, pageSlugs, getSlug, getPageKeyBySlug } from "@/lib/i18n/pages";
+import {
+  legalSlugs,
+  getLegalKeyBySlug,
+  getLegalSlug,
+  type LegalPageKey,
+} from "@/lib/i18n/legal";
+import { getLegalDictionary } from "@/lib/i18n/legal-dictionaries";
 import { siteConfig } from "@/lib/site";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter";
+import LegalPageView from "@/components/LegalPageView";
 import InfoBox from "@/components/InfoBox";
 import Timeline from "@/components/Timeline";
 import PricingTable from "@/components/PricingTable";
@@ -22,6 +30,7 @@ export function generateStaticParams() {
     for (const key of pageKeys) {
       params.push({ lang, slug: pageSlugs[lang][key] });
     }
+    params.push({ lang, slug: legalSlugs[lang].privacy });
   }
   return params;
 }
@@ -33,6 +42,36 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lang, slug } = await params;
   if (!isLocale(lang)) return {};
+
+  const legalKey = getLegalKeyBySlug(lang, slug);
+  if (legalKey) {
+    const legalDict = await getLegalDictionary(lang);
+    const content = legalDict[legalKey];
+    const path = `/${lang}/${slug}`;
+    const languages = Object.fromEntries(
+      i18n.locales.map((l) => [l, `/${l}/${getLegalSlug(l, legalKey)}`]),
+    );
+    return {
+      title: content.meta.title,
+      description: content.meta.description,
+      alternates: {
+        canonical: path,
+        languages: {
+          ...languages,
+          "x-default": `/en/${getLegalSlug("en", legalKey)}`,
+        },
+      },
+      openGraph: {
+        type: "website",
+        siteName: siteConfig.name,
+        locale: ogLocales[lang],
+        url: path,
+        title: content.meta.title,
+        description: content.meta.description,
+      },
+      robots: { index: true, follow: true },
+    };
+  }
 
   const key = getPageKeyBySlug(lang, slug);
   if (!key) return {};
@@ -68,13 +107,30 @@ export async function generateMetadata({
   };
 }
 
-export default async function VignettePage({
+export default async function SlugPage({
   params,
 }: {
   params: Promise<{ lang: string; slug: string }>;
 }) {
   const { lang, slug } = await params;
   if (!isLocale(lang)) notFound();
+
+  const legalKey = getLegalKeyBySlug(lang, slug);
+  if (legalKey) {
+    const [dict, legalDict] = await Promise.all([
+      getDictionary(lang),
+      getLegalDictionary(lang),
+    ]);
+    const pageUrl = `${siteConfig.url}/${lang}/${slug}`;
+    return (
+      <LegalPageView
+        dict={dict}
+        locale={lang}
+        content={legalDict[legalKey]}
+        pageUrl={pageUrl}
+      />
+    );
+  }
 
   const key = getPageKeyBySlug(lang, slug);
   if (!key) notFound();
@@ -244,7 +300,7 @@ export default async function VignettePage({
           </div>
         </section>
 
-        <Newsletter dict={dict} />
+        <Newsletter dict={dict} locale={lang} />
       </main>
 
       <Footer

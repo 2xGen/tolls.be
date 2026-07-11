@@ -1,6 +1,8 @@
 import Link from "next/link";
 import type { Dictionary, NavItem } from "@/lib/i18n/types";
 import { i18n, localeNames, type Locale } from "@/lib/i18n/config";
+import { getPrivacyPath } from "@/lib/i18n/legal";
+import ManageCookiesButton from "@/components/cookies/ManageCookiesButton";
 
 export default function Footer({
   dict,
@@ -61,13 +63,18 @@ export default function Footer({
             {dict.footer.links.map((link) => (
               <li key={link.label}>
                 <Link
-                  href={link.href}
+                  href={
+                    link.href === "#privacy" ? getPrivacyPath(locale) : link.href
+                  }
                   className="text-sm text-white/90 underline-offset-4 hover:text-white hover:underline"
                 >
                   {link.label}
                 </Link>
               </li>
             ))}
+            <li>
+              <ManageCookiesButton label={dict.cookies.manageLabel} />
+            </li>
           </ul>
         </nav>
 

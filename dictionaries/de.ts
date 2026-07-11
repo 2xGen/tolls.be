@@ -218,9 +218,13 @@ const de: Dictionary = {
     emailLabel: "E-Mail-Adresse",
     emailPlaceholder: "sie@beispiel.be",
     button: "Abonnieren",
-    consent:
-      "Mit dem Abonnieren stimmen Sie zu, gelegentlich E-Mail-Updates zu erhalten. Sie können sich jederzeit abmelden.",
-    success: "Vielen Dank. Bitte prüfen Sie Ihren Posteingang, um Ihr Abonnement zu bestätigen.",
+    consentBefore:
+      "Mit dem Abonnieren stimmen Sie zu, gelegentlich E-Mail-Updates zur Belgien-Vignette zu erhalten. Siehe unsere ",
+    consentAfter:
+      " für Informationen zur Speicherung und Nutzung Ihrer E-Mail-Adresse. Sie können sich jederzeit abmelden.",
+    success: "Vielen Dank. Sie sind für Updates zur Belgien-Vignette angemeldet.",
+    error: "Etwas ist schiefgelaufen. Bitte versuchen Sie es später erneut.",
+    submitting: "Wird angemeldet…",
   },
   footer: {
     description:
@@ -229,7 +233,7 @@ const de: Dictionary = {
     links: [
       { label: "Über uns", href: "#" },
       { label: "Kontakt", href: "mailto:info@tolls.be" },
-      { label: "Datenschutzerklärung", href: "#" },
+      { label: "Datenschutzerklärung", href: "#privacy" },
     ],
     languagesTitle: "Sprachen",
     disclaimerTitle: "Wichtiger Hinweis",
@@ -240,6 +244,34 @@ const de: Dictionary = {
   breadcrumb: {
     home: "Startseite",
     current: "Belgien-Vignette 2027",
+  },
+  cookies: {
+    bannerTitle: "Cookie-Einstellungen",
+    bannerDescription:
+      "Wir verwenden essenzielle Speicherung, um Ihre Cookie-Auswahl zu speichern. Mit Ihrer Einwilligung nutzen wir Analyse-Tools, um Seitenaufrufe, Gerätetypen und ungefähre Standorte zu verstehen. Sie können Ihre Auswahl jederzeit ändern.",
+    privacyLink: "Datenschutzerklärung",
+    acceptAll: "Alle akzeptieren",
+    rejectNonEssential: "Nicht essenzielle ablehnen",
+    managePreferences: "Einstellungen verwalten",
+    preferencesTitle: "Cookie-Einstellungen verwalten",
+    savePreferences: "Einstellungen speichern",
+    close: "Schließen",
+    essentialTitle: "Essenziell",
+    essentialDescription:
+      "Speichert Ihre Cookie-Auswahl im Browser, damit wir nicht bei jedem Besuch erneut fragen müssen.",
+    essentialAlwaysOn: "Immer aktiv",
+    analyticsTitle: "Analyse",
+    analyticsDescription:
+      "Hilft uns zu verstehen, wie Besucher die Website nutzen, einschließlich Seitenaufrufe, Gerätetypen und ungefährem Standort. Wird nur geladen, wenn Sie zustimmen.",
+    services: {
+      vercel:
+        "Vercel Analytics — datenschutzfreundliche Seitenaufruf-Statistiken (keine Werbe-Cookies).",
+      google:
+        "Google Analytics — optionale Besucherstatistiken, falls vom Website-Betreiber aktiviert.",
+      bing:
+        "Microsoft Clarity — optionale Sitzungseinblicke für Bing-bezogene Analysen, falls aktiviert.",
+    },
+    manageLabel: "Cookies verwalten",
   },
 };
 

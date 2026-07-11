@@ -215,9 +215,13 @@ const en: Dictionary = {
     emailLabel: "Email address",
     emailPlaceholder: "you@example.com",
     button: "Subscribe",
-    consent:
-      "By subscribing you agree to receive occasional email updates. You can unsubscribe at any time.",
-    success: "Thank you. Please check your inbox to confirm your subscription.",
+    consentBefore:
+      "By subscribing you agree to receive occasional email updates about the Belgium vignette. See our ",
+    consentAfter:
+      " for how we store and use your email address. You can unsubscribe at any time.",
+    success: "Thank you. You are subscribed to Belgium vignette updates.",
+    error: "Something went wrong. Please try again in a moment.",
+    submitting: "Subscribing…",
   },
   footer: {
     description:
@@ -226,7 +230,7 @@ const en: Dictionary = {
     links: [
       { label: "About", href: "#" },
       { label: "Contact", href: "mailto:info@tolls.be" },
-      { label: "Privacy Policy", href: "#" },
+      { label: "Privacy Policy", href: "#privacy" },
     ],
     languagesTitle: "Languages",
     disclaimerTitle: "Important notice",
@@ -237,6 +241,34 @@ const en: Dictionary = {
   breadcrumb: {
     home: "Home",
     current: "Belgium Vignette 2027",
+  },
+  cookies: {
+    bannerTitle: "Cookie preferences",
+    bannerDescription:
+      "We use essential storage to remember your cookie choice. With your consent, we use analytics tools to understand page views, device types and approximate locations. You can change your choice at any time.",
+    privacyLink: "Privacy policy",
+    acceptAll: "Accept all",
+    rejectNonEssential: "Reject non-essential",
+    managePreferences: "Manage preferences",
+    preferencesTitle: "Manage cookie preferences",
+    savePreferences: "Save preferences",
+    close: "Close",
+    essentialTitle: "Essential",
+    essentialDescription:
+      "Stores your cookie consent choice in your browser so we do not ask again on every visit.",
+    essentialAlwaysOn: "Always on",
+    analyticsTitle: "Analytics",
+    analyticsDescription:
+      "Helps us understand how visitors use the site, including page views, device types and approximate location. Loaded only if you opt in.",
+    services: {
+      vercel:
+        "Vercel Analytics — privacy-friendly page view statistics (no advertising cookies).",
+      google:
+        "Google Analytics — optional visitor statistics if enabled by the site owner.",
+      bing:
+        "Microsoft Clarity — optional session insights for Bing-related analytics if enabled.",
+    },
+    manageLabel: "Manage cookies",
   },
 };
 

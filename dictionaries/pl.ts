@@ -218,9 +218,13 @@ const pl: Dictionary = {
     emailLabel: "Adres e-mail",
     emailPlaceholder: "ty@przyklad.pl",
     button: "Zapisz się",
-    consent:
-      "Zapisując się, zgadzasz się na otrzymywanie okazjonalnych aktualności e-mail. Możesz zrezygnować w dowolnym momencie.",
-    success: "Dziękujemy. Sprawdź swoją skrzynkę odbiorczą, aby potwierdzić zapis.",
+    consentBefore:
+      "Zapisując się, zgadzasz się na otrzymywanie okazjonalnych aktualności e-mail o belgijskiej winiecie. Zobacz naszą ",
+    consentAfter:
+      ", aby dowiedzieć się, jak przechowujemy i wykorzystujemy Twój adres e-mail. Możesz zrezygnować w dowolnym momencie.",
+    success: "Dziękujemy. Jesteś zapisany na aktualności o belgijskiej winiecie.",
+    error: "Coś poszło nie tak. Spróbuj ponownie za chwilę.",
+    submitting: "Zapisywanie…",
   },
   footer: {
     description:
@@ -229,7 +233,7 @@ const pl: Dictionary = {
     links: [
       { label: "O nas", href: "#" },
       { label: "Kontakt", href: "mailto:info@tolls.be" },
-      { label: "Polityka prywatności", href: "#" },
+      { label: "Polityka prywatności", href: "#privacy" },
     ],
     languagesTitle: "Języki",
     disclaimerTitle: "Ważna informacja",
@@ -240,6 +244,34 @@ const pl: Dictionary = {
   breadcrumb: {
     home: "Strona główna",
     current: "Belgijska winieta 2027",
+  },
+  cookies: {
+    bannerTitle: "Preferencje dotyczące plików cookie",
+    bannerDescription:
+      "Używamy niezbędnego przechowywania, aby zapamiętać Twój wybór dotyczący cookies. Za Twoją zgodą korzystamy z narzędzi analitycznych, aby zrozumieć wyświetlenia stron, typy urządzeń i przybliżone lokalizacje. Możesz zmienić swój wybór w dowolnym momencie.",
+    privacyLink: "Polityka prywatności",
+    acceptAll: "Zaakceptuj wszystkie",
+    rejectNonEssential: "Odrzuć nieistotne",
+    managePreferences: "Zarządzaj preferencjami",
+    preferencesTitle: "Zarządzaj preferencjami cookies",
+    savePreferences: "Zapisz preferencje",
+    close: "Zamknij",
+    essentialTitle: "Niezbędne",
+    essentialDescription:
+      "Zapisuje Twój wybór dotyczący cookies w przeglądarce, aby nie pytać ponownie przy każdej wizycie.",
+    essentialAlwaysOn: "Zawsze włączone",
+    analyticsTitle: "Analityka",
+    analyticsDescription:
+      "Pomaga nam zrozumieć, jak odwiedzający korzystają ze strony, w tym wyświetlenia stron, typy urządzeń i przybliżoną lokalizację. Ładowane tylko po wyrażeniu zgody.",
+    services: {
+      vercel:
+        "Vercel Analytics — przyjazne dla prywatności statystyki wyświetleń stron (bez cookies reklamowych).",
+      google:
+        "Google Analytics — opcjonalne statystyki odwiedzin, jeśli włączone przez właściciela strony.",
+      bing:
+        "Microsoft Clarity — opcjonalne informacje o sesjach dla analityki związanej z Bing, jeśli włączone.",
+    },
+    manageLabel: "Zarządzaj cookies",
   },
 };
 

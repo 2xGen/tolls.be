@@ -218,9 +218,13 @@ const fr: Dictionary = {
     emailLabel: "Adresse e-mail",
     emailPlaceholder: "vous@exemple.be",
     button: "S'abonner",
-    consent:
-      "En vous abonnant, vous acceptez de recevoir occasionnellement des mises à jour par e-mail. Vous pouvez vous désabonner à tout moment.",
-    success: "Merci. Veuillez consulter votre boîte de réception pour confirmer votre abonnement.",
+    consentBefore:
+      "En vous abonnant, vous acceptez de recevoir occasionnellement des mises à jour par e-mail sur la vignette belge. Consultez notre ",
+    consentAfter:
+      " pour savoir comment nous stockons et utilisons votre adresse e-mail. Vous pouvez vous désabonner à tout moment.",
+    success: "Merci. Vous êtes abonné aux mises à jour sur la vignette belge.",
+    error: "Une erreur s'est produite. Veuillez réessayer dans un instant.",
+    submitting: "Inscription…",
   },
   footer: {
     description:
@@ -229,7 +233,7 @@ const fr: Dictionary = {
     links: [
       { label: "À propos", href: "#" },
       { label: "Contact", href: "mailto:info@tolls.be" },
-      { label: "Politique de confidentialité", href: "#" },
+      { label: "Politique de confidentialité", href: "#privacy" },
     ],
     languagesTitle: "Langues",
     disclaimerTitle: "Avis important",
@@ -240,6 +244,34 @@ const fr: Dictionary = {
   breadcrumb: {
     home: "Accueil",
     current: "Vignette belge 2027",
+  },
+  cookies: {
+    bannerTitle: "Préférences en matière de cookies",
+    bannerDescription:
+      "Nous utilisons un stockage essentiel pour mémoriser votre choix en matière de cookies. Avec votre consentement, nous utilisons des outils d'analyse pour comprendre les pages vues, les types d'appareils et les localisations approximatives. Vous pouvez modifier votre choix à tout moment.",
+    privacyLink: "Politique de confidentialité",
+    acceptAll: "Tout accepter",
+    rejectNonEssential: "Refuser les non essentiels",
+    managePreferences: "Gérer les préférences",
+    preferencesTitle: "Gérer les préférences de cookies",
+    savePreferences: "Enregistrer les préférences",
+    close: "Fermer",
+    essentialTitle: "Essentiels",
+    essentialDescription:
+      "Enregistre votre choix de cookies dans votre navigateur afin de ne pas vous redemander à chaque visite.",
+    essentialAlwaysOn: "Toujours actif",
+    analyticsTitle: "Analyse",
+    analyticsDescription:
+      "Nous aide à comprendre comment les visiteurs utilisent le site, y compris les pages vues, les types d'appareils et la localisation approximative. Chargé uniquement si vous y consentez.",
+    services: {
+      vercel:
+        "Vercel Analytics — statistiques de pages vues respectueuses de la vie privée (pas de cookies publicitaires).",
+      google:
+        "Google Analytics — statistiques de visiteurs optionnelles si activées par le propriétaire du site.",
+      bing:
+        "Microsoft Clarity — informations de session optionnelles pour l'analyse liée à Bing si activé.",
+    },
+    manageLabel: "Gérer les cookies",
   },
 };
 

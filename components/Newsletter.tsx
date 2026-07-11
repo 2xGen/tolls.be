@@ -1,19 +1,65 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import type { Dictionary } from "@/lib/i18n/types";
+import type { Locale } from "@/lib/i18n/config";
+import { getPrivacyPath } from "@/lib/i18n/legal";
 
-export default function Newsletter({ dict }: { dict: Dictionary }) {
+export default function Newsletter({
+  dict,
+  locale,
+}: {
+  dict: Dictionary;
+  locale: Locale;
+}) {
   const { newsletter } = dict;
   const [submitted, setSubmitted] = useState(false);
   const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    // No backend in this version — capture the intent client-side.
-    // Wire this up to an email provider / API route when available.
-    if (email.trim()) setSubmitted(true);
+    setError(null);
+
+    const trimmed = email.trim();
+    if (!trimmed) return;
+
+    setLoading(true);
+    try {
+      const form = e.currentTarget;
+      const website = (
+        form.elements.namedItem("website") as HTMLInputElement
+      )?.value;
+
+      const res = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: trimmed,
+          locale,
+          consent: true,
+          website,
+        }),
+      });
+
+      const data = (await res.json()) as { error?: string };
+
+      if (!res.ok) {
+        setError(data.error ?? newsletter.error);
+        return;
+      }
+
+      setSubmitted(true);
+    } catch {
+      setError(newsletter.error);
+    } finally {
+      setLoading(false);
+    }
   }
+
+  const privacyPath = getPrivacyPath(locale);
 
   return (
     <section id="updates" aria-labelledby="updates-title" className="section bg-white">
@@ -45,6 +91,14 @@ export default function Newsletter({ dict }: { dict: Dictionary }) {
               className="mt-6 flex max-w-xl flex-col gap-3 sm:flex-row sm:items-end"
               noValidate
             >
+              <input
+                type="text"
+                name="website"
+                tabIndex={-1}
+                autoComplete="off"
+                className="hidden"
+                aria-hidden="true"
+              />
               <div className="flex-1">
                 <label
                   htmlFor="newsletter-email"
@@ -61,17 +115,32 @@ export default function Newsletter({ dict }: { dict: Dictionary }) {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder={newsletter.emailPlaceholder}
-                  className="mt-1 w-full rounded-gov border border-line bg-white px-4 py-3 text-base text-charcoal placeholder:text-charcoal-light/60 focus:border-navy"
+                  disabled={loading}
+                  className="mt-1 w-full rounded-gov border border-line bg-white px-4 py-3 text-base text-charcoal placeholder:text-charcoal-light/60 focus:border-navy disabled:opacity-60"
                 />
               </div>
-              <button type="submit" className="btn-primary shrink-0">
-                {newsletter.button}
+              <button
+                type="submit"
+                disabled={loading}
+                className="btn-primary shrink-0 disabled:opacity-60"
+              >
+                {loading ? newsletter.submitting : newsletter.button}
               </button>
             </form>
           )}
 
+          {error && (
+            <p role="alert" className="mt-3 text-sm font-medium text-accent">
+              {error}
+            </p>
+          )}
+
           <p className="mt-3 text-xs text-charcoal-light">
-            {newsletter.consent}
+            {newsletter.consentBefore}
+            <Link href={privacyPath} className="font-semibold text-navy underline">
+              {dict.cookies.privacyLink.toLowerCase()}
+            </Link>
+            {newsletter.consentAfter}
           </p>
         </div>
       </div>

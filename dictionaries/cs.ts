@@ -218,9 +218,13 @@ const cs: Dictionary = {
     emailLabel: "E-mailová adresa",
     emailPlaceholder: "vy@priklad.cz",
     button: "Přihlásit se",
-    consent:
-      "Přihlášením souhlasíte s příležitostným zasíláním novinek e-mailem. Kdykoli se můžete odhlásit.",
-    success: "Děkujeme. Zkontrolujte prosím svou schránku a potvrďte přihlášení.",
+    consentBefore:
+      "Přihlášením souhlasíte s příležitostným zasíláním e-mailových novinek o belgické známce. Viz naše ",
+    consentAfter:
+      " pro informace o tom, jak ukládáme a používáme vaši e-mailovou adresu. Kdykoli se můžete odhlásit.",
+    success: "Děkujeme. Jste přihlášeni k odběru novinek o belgické známce.",
+    error: "Něco se pokazilo. Zkuste to prosím za chvíli znovu.",
+    submitting: "Přihlašování…",
   },
   footer: {
     description:
@@ -229,7 +233,7 @@ const cs: Dictionary = {
     links: [
       { label: "O nás", href: "#" },
       { label: "Kontakt", href: "mailto:info@tolls.be" },
-      { label: "Zásady ochrany osobních údajů", href: "#" },
+      { label: "Zásady ochrany osobních údajů", href: "#privacy" },
     ],
     languagesTitle: "Jazyky",
     disclaimerTitle: "Důležité upozornění",
@@ -240,6 +244,34 @@ const cs: Dictionary = {
   breadcrumb: {
     home: "Domů",
     current: "Belgická dálniční známka 2027",
+  },
+  cookies: {
+    bannerTitle: "Předvolby cookies",
+    bannerDescription:
+      "Používáme nezbytné uložiště pro zapamatování vaší volby cookies. S vaším souhlasem používáváme analytické nástroje ke sledování zobrazení stránek, typů zařízení a přibližných lokalit. Svou volbu můžete kdykoli změnit.",
+    privacyLink: "Zásady ochrany osobních údajů",
+    acceptAll: "Přijmout vše",
+    rejectNonEssential: "Odmítnout nepodstatné",
+    managePreferences: "Spravovat předvolby",
+    preferencesTitle: "Správa předvoleb cookies",
+    savePreferences: "Uložit předvolby",
+    close: "Zavřít",
+    essentialTitle: "Nezbytné",
+    essentialDescription:
+      "Ukládá vaši volbu cookies do prohlížeče, abychom se nemuseli ptát při každé návštěvě znovu.",
+    essentialAlwaysOn: "Vždy zapnuto",
+    analyticsTitle: "Analytika",
+    analyticsDescription:
+      "Pomáhá nám pochopit, jak návštěvníci web používají, včetně zobrazení stránek, typů zařízení a přibližné polohy. Načítá se pouze po vašem souhlasu.",
+    services: {
+      vercel:
+        "Vercel Analytics — statistiky zobrazení stránek šetrné k soukromí (bez reklamních cookies).",
+      google:
+        "Google Analytics — volitelné statistiky návštěvníků, pokud je aktivuje vlastník webu.",
+      bing:
+        "Microsoft Clarity — volitelné informace o relacích pro analytiku související s Bing, pokud je aktivováno.",
+    },
+    manageLabel: "Spravovat cookies",
   },
 };
 

@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { Public_Sans } from "next/font/google";
 import { notFound } from "next/navigation";
-import { Analytics } from "@vercel/analytics/next";
 import "../globals.css";
 import { i18n, isLocale, ogLocales, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
+import { getPrivacyPath } from "@/lib/i18n/legal";
 import { siteConfig } from "@/lib/site";
+import { CookieConsentProvider } from "@/components/cookies/CookieConsentContext";
+import ConsentAnalytics from "@/components/cookies/ConsentAnalytics";
 
 const publicSans = Public_Sans({
   subsets: ["latin"],
@@ -69,6 +71,9 @@ export async function generateMetadata({
       follow: true,
       googleBot: { index: true, follow: true, "max-image-preview": "large" },
     },
+    other: {
+      "msvalidate.01": "D56EB4A1FD92FE4D0287836170CEF0FC",
+    },
   };
 }
 
@@ -82,11 +87,15 @@ export default async function LangLayout({
   const { lang } = await params;
   if (!isLocale(lang)) notFound();
 
+  const dict = await getDictionary(lang);
+
   return (
     <html lang={lang} className={publicSans.variable}>
       <body>
-        {children}
-        <Analytics />
+        <CookieConsentProvider dict={dict} privacyHref={getPrivacyPath(lang)}>
+          {children}
+          <ConsentAnalytics />
+        </CookieConsentProvider>
       </body>
     </html>
   );

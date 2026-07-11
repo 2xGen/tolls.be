@@ -218,9 +218,13 @@ const nl: Dictionary = {
     emailLabel: "E-mailadres",
     emailPlaceholder: "u@voorbeeld.be",
     button: "Inschrijven",
-    consent:
-      "Door in te schrijven gaat u akkoord met het af en toe ontvangen van e-mailupdates. U kunt zich op elk moment uitschrijven.",
-    success: "Bedankt. Controleer uw inbox om uw inschrijving te bevestigen.",
+    consentBefore:
+      "Door in te schrijven gaat u akkoord met het af en toe ontvangen van e-mailupdates over het Belgische vignet. Zie ons ",
+    consentAfter:
+      " voor hoe we uw e-mailadres opslaan en gebruiken. U kunt zich op elk moment uitschrijven.",
+    success: "Bedankt. U bent ingeschreven voor updates over het Belgische vignet.",
+    error: "Er is iets misgegaan. Probeer het later opnieuw.",
+    submitting: "Inschrijven…",
   },
   footer: {
     description:
@@ -229,7 +233,7 @@ const nl: Dictionary = {
     links: [
       { label: "Over ons", href: "#" },
       { label: "Contact", href: "mailto:info@tolls.be" },
-      { label: "Privacybeleid", href: "#" },
+      { label: "Privacybeleid", href: "#privacy" },
     ],
     languagesTitle: "Talen",
     disclaimerTitle: "Belangrijke mededeling",
@@ -240,6 +244,34 @@ const nl: Dictionary = {
   breadcrumb: {
     home: "Home",
     current: "Belgisch vignet 2027",
+  },
+  cookies: {
+    bannerTitle: "Cookievoorkeuren",
+    bannerDescription:
+      "We gebruiken essentiële opslag om uw cookiekeuze te onthouden. Met uw toestemming gebruiken we analysetools om paginaweergaven, apparaattypen en geschatte locaties te begrijpen. U kunt uw keuze op elk moment wijzigen.",
+    privacyLink: "Privacybeleid",
+    acceptAll: "Alles accepteren",
+    rejectNonEssential: "Niet-essentiële weigeren",
+    managePreferences: "Voorkeuren beheren",
+    preferencesTitle: "Cookievoorkeuren beheren",
+    savePreferences: "Voorkeuren opslaan",
+    close: "Sluiten",
+    essentialTitle: "Essentieel",
+    essentialDescription:
+      "Slaat uw cookiekeuze op in uw browser, zodat we niet bij elk bezoek opnieuw vragen.",
+    essentialAlwaysOn: "Altijd actief",
+    analyticsTitle: "Analyse",
+    analyticsDescription:
+      "Helpt ons te begrijpen hoe bezoekers de site gebruiken, inclusief paginaweergaven, apparaattypen en geschatte locatie. Alleen geladen als u hiervoor kiest.",
+    services: {
+      vercel:
+        "Vercel Analytics — privacyvriendelijke statistieken over paginaweergaven (geen advertentiecookies).",
+      google:
+        "Google Analytics — optionele bezoekersstatistieken indien ingeschakeld door de site-eigenaar.",
+      bing:
+        "Microsoft Clarity — optionele sessie-inzichten voor Bing-gerelateerde analyses indien ingeschakeld.",
+    },
+    manageLabel: "Cookies beheren",
   },
 };
 

@@ -181,7 +181,7 @@ export default async function HomePage({
           </div>
         </section>
 
-        <Newsletter dict={dict} />
+        <Newsletter dict={dict} locale={lang} />
       </main>
 
       <Footer
