@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Public_Sans } from "next/font/google";
 import { notFound } from "next/navigation";
+import { Analytics } from "@vercel/analytics/next";
 import "../globals.css";
 import { i18n, isLocale, ogLocales, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
@@ -83,7 +84,10 @@ export default async function LangLayout({
 
   return (
     <html lang={lang} className={publicSans.variable}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
