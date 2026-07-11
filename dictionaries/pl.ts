@@ -10,7 +10,6 @@ const pl: Dictionary = {
   header: {
     subtitle: "Informacje o belgijskich opłatach drogowych",
     languageLabel: "Język",
-    skipToContent: "Przejdź do treści głównej",
     nav: [
       { label: "Belgijska winieta", href: "#what" },
       { label: "Ceny", href: "#prices" },

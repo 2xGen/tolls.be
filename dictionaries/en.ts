@@ -10,7 +10,6 @@ const en: Dictionary = {
   header: {
     subtitle: "Belgium road toll information",
     languageLabel: "Language",
-    skipToContent: "Skip to main content",
     nav: [
       { label: "Belgium Vignette", href: "#what" },
       { label: "Prices", href: "#prices" },

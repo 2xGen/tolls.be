@@ -10,7 +10,6 @@ const cs: Dictionary = {
   header: {
     subtitle: "Informace o belgickém mýtném",
     languageLabel: "Jazyk",
-    skipToContent: "Přejít na hlavní obsah",
     nav: [
       { label: "Belgická známka", href: "#what" },
       { label: "Ceny", href: "#prices" },

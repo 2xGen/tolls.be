@@ -10,7 +10,6 @@ const nl: Dictionary = {
   header: {
     subtitle: "Belgische wegtolinformatie",
     languageLabel: "Taal",
-    skipToContent: "Ga naar hoofdinhoud",
     nav: [
       { label: "Belgisch vignet", href: "#what" },
       { label: "Prijzen", href: "#prices" },

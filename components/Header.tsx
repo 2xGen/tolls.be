@@ -39,7 +39,9 @@ export default function Header({
           </span>
         </Link>
 
-        <LanguageSelector current={locale} label={dict.header.languageLabel} />
+        <div className="ml-auto shrink-0">
+          <LanguageSelector current={locale} label={dict.header.languageLabel} />
+        </div>
       </div>
 
       <nav

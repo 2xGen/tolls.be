@@ -10,7 +10,6 @@ const es: Dictionary = {
   header: {
     subtitle: "Información sobre peajes en Bélgica",
     languageLabel: "Idioma",
-    skipToContent: "Ir al contenido principal",
     nav: [
       { label: "Viñeta belga", href: "#what" },
       { label: "Precios", href: "#prices" },

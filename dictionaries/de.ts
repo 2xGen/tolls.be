@@ -10,7 +10,6 @@ const de: Dictionary = {
   header: {
     subtitle: "Informationen zur belgischen Straßenmaut",
     languageLabel: "Sprache",
-    skipToContent: "Zum Hauptinhalt springen",
     nav: [
       { label: "Belgien-Vignette", href: "#what" },
       { label: "Preise", href: "#prices" },

@@ -10,7 +10,6 @@ const fr: Dictionary = {
   header: {
     subtitle: "Informations sur le péage routier belge",
     languageLabel: "Langue",
-    skipToContent: "Aller au contenu principal",
     nav: [
       { label: "Vignette belge", href: "#what" },
       { label: "Prix", href: "#prices" },

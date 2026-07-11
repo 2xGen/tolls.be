@@ -13,7 +13,6 @@ export interface Dictionary {
     subtitle: string;
     languageLabel: string;
     nav: NavItem[];
-    skipToContent: string;
   };
   hero: {
     eyebrow: string;

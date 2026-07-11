@@ -53,7 +53,7 @@ export default function LanguageSelector({
         aria-haspopup="menu"
         aria-expanded={open}
         aria-label={label}
-        className="inline-flex items-center gap-1.5 rounded-gov border border-line bg-white px-3 py-2 text-sm font-semibold text-navy hover:bg-mist"
+        className="inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-gov border border-line bg-white px-3 py-2 text-sm font-semibold text-navy hover:bg-mist"
       >
         <GlobeIcon className="h-4 w-4" />
         <span>{localeNames[current]}</span>
@@ -65,7 +65,7 @@ export default function LanguageSelector({
       {open && (
         <ul
           role="menu"
-          className="absolute right-0 z-50 mt-1 w-44 overflow-hidden rounded-gov border border-line bg-white py-1 shadow-lg"
+          className="absolute right-0 z-50 mt-1 min-w-[11.5rem] w-max rounded-gov border border-line bg-white py-1 shadow-lg"
         >
           {i18n.locales.map((locale) => (
             <li key={locale} role="none">
@@ -75,7 +75,7 @@ export default function LanguageSelector({
                 hrefLang={locale}
                 onClick={() => setOpen(false)}
                 aria-current={locale === current ? "true" : undefined}
-                className={`block px-4 py-2 text-sm hover:bg-mist ${
+                className={`block whitespace-nowrap px-4 py-2 text-sm hover:bg-mist ${
                   locale === current
                     ? "font-semibold text-navy"
                     : "text-charcoal"
