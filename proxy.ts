@@ -40,6 +40,6 @@ export const config = {
   // Skip Next.js internals, static files, generated icons and SEO metadata
   // routes so they are not redirected into a locale path.
   matcher: [
-    "/((?!_next|api|.*\\..*|robots.txt|sitemap.xml|icon|apple-icon|opengraph-image|manifest.webmanifest).*)",
+    "/((?!_next|api|.*\\..*|robots.txt|sitemap.xml|icon|apple-icon|manifest|opengraph-image|manifest.webmanifest).*)",
   ],
 };

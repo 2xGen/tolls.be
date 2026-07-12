@@ -56,6 +56,15 @@ export async function generateMetadata({
       canonical: path,
       languages: { ...languageAlternates, "x-default": "/en" },
     },
+    manifest: "/manifest.webmanifest",
+    icons: {
+      icon: [
+        { url: "/icon/48", sizes: "48x48", type: "image/png" },
+        { url: "/icon/96", sizes: "96x96", type: "image/png" },
+        { url: "/icon/144", sizes: "144x144", type: "image/png" },
+      ],
+      apple: [{ url: "/apple-icon", sizes: "180x180", type: "image/png" }],
+    },
     openGraph: {
       type: "website",
       siteName: siteConfig.name,
