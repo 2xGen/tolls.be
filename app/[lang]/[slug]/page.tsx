@@ -4,7 +4,7 @@ import Link from "next/link";
 import { i18n, isLocale, ogLocales } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 import { getPagesDictionary } from "@/lib/i18n/pages-dictionaries";
-import { pageKeys, pageSlugs, getSlug, getPageKeyBySlug } from "@/lib/i18n/pages";
+import { pageKeys, pageSlugs, getSlug, getPageKeyBySlug, crossBorderPageKeys } from "@/lib/i18n/pages";
 import {
   legalSlugs,
   getLegalKeyBySlug,
@@ -23,6 +23,7 @@ import Timeline from "@/components/Timeline";
 import PricingTable from "@/components/PricingTable";
 import RequirementCards from "@/components/RequirementCards";
 import PageStructuredData from "@/components/PageStructuredData";
+import LiefkenshoekTollTable from "@/components/LiefkenshoekTollTable";
 import { ArrowRightIcon, CheckIcon, ChevronDownIcon } from "@/components/icons";
 
 export function generateStaticParams() {
@@ -113,6 +114,11 @@ export async function generateMetadata({
       description: content.meta.description,
       ...sharedOg.twitter,
     },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: { index: true, follow: true, "max-image-preview": "large" },
+    },
   };
 }
 
@@ -150,6 +156,7 @@ export default async function SlugPage({
   ]);
   const content = pagesDict[key];
   const pageUrl = `${siteConfig.url}/${lang}/${slug}`;
+  const pathname = `/${lang}/${slug}`;
 
   const topicLinks = pageKeys.map((k) => ({
     label: pagesDict[k].navLabel,
@@ -173,7 +180,7 @@ export default async function SlugPage({
         faq={content.faq}
       />
 
-      <Header dict={dict} locale={lang} />
+      <Header dict={dict} locale={lang} pathname={pathname} />
 
       <div className="border-b border-line bg-mist">
         <nav aria-label="Breadcrumb" className="container-gov py-2.5">
@@ -205,13 +212,23 @@ export default async function SlugPage({
                 <p key={i}>{paragraph}</p>
               ))}
             </div>
+            {content.lastUpdated && (
+              <p className="mt-4 text-sm text-charcoal-light">{content.lastUpdated}</p>
+            )}
           </div>
         </section>
+
+        {key === "liefkenshoek-tunnel" && content.tollTable && (
+          <LiefkenshoekTollTable labels={content.tollTable} locale={lang} />
+        )}
 
         {key === "belgium-vignette" && <InfoBox dict={dict} />}
         {key === "belgium-vignette-price" && <PricingTable dict={dict} />}
         {key === "belgium-vignette-foreign-cars" && (
           <RequirementCards dict={dict} />
+        )}
+        {(crossBorderPageKeys as readonly string[]).includes(key) && (
+          <PricingTable dict={dict} />
         )}
 
         <section className="section bg-white">
@@ -308,6 +325,7 @@ export default async function SlugPage({
       <Footer
         dict={dict}
         locale={lang}
+        pathname={pathname}
         topicLinks={topicLinks}
         topicTitle={dict.header.nav[0]?.label}
       />

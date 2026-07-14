@@ -4,27 +4,22 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useRef, useEffect } from "react";
 import { i18n, localeNames, type Locale } from "@/lib/i18n/config";
+import { swapLocalePath } from "@/lib/i18n/swap-locale-path";
 import { GlobeIcon, ChevronDownIcon } from "./icons";
-
-function swapLocale(pathname: string, target: Locale): string {
-  const segments = pathname.split("/");
-  // segments[0] is "" because pathname starts with "/"
-  if (segments.length > 1 && i18n.locales.includes(segments[1] as Locale)) {
-    segments[1] = target;
-  } else {
-    segments.splice(1, 0, target);
-  }
-  return segments.join("/") || `/${target}`;
-}
 
 export default function LanguageSelector({
   current,
   label,
+  pathname: pathnameProp,
 }: {
   current: Locale;
   label: string;
+  /** Current URL path from the server, e.g. /pl/tunel-liefkenshoek-oplaty */
+  pathname?: string;
 }) {
-  const pathname = usePathname() || `/${current}`;
+  const pathnameFromRouter = usePathname();
+  const pathname =
+    pathnameProp ?? pathnameFromRouter ?? `/${current}`;
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -71,7 +66,7 @@ export default function LanguageSelector({
             <li key={locale} role="none">
               <Link
                 role="menuitem"
-                href={swapLocale(pathname, locale)}
+                href={swapLocalePath(pathname, locale)}
                 hrefLang={locale}
                 onClick={() => setOpen(false)}
                 aria-current={locale === current ? "true" : undefined}

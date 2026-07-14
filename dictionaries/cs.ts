@@ -209,6 +209,22 @@ const cs: Dictionary = {
       "Podrobnosti plánované známky se mohou ještě změnit. Před koupí známky si vždy ověřte nejnovější požadavky prostřednictvím oficiálních kanálů.",
     ],
   },
+  sisterSite: {
+    updatesTitle: "Nejnovější aktualizace",
+    updatesText:
+      "Zprávy, oficiální oznámení a redakční shrnutí publikujeme na našem sesterském webu — ne duplikujeme je zde.",
+    updatesLink: "Sledujte zprávy na {site} → Novinky",
+    updatesNote:
+      "Tolls.be je vícejazyčný referenční průvodce. BelgiumVignette.be pokrývá zprávy a praktické aktualizace.",
+    newsLabel: "Novinky na BelgiumVignette.be",
+    footerTitle: "Sesterský web",
+    footerGuide: "BelgiumVignette.be — zprávy a průvodce",
+  },
+  crossBorder: {
+    title: "Přeshraniční řidiči",
+    intro:
+      "Průvodce pro řidiče vjíždějící do Belgie ze sousedních zemí — ceny, krátkodobé známky a co očekávat.",
+  },
   newsletter: {
     badge: "Zůstaňte informováni",
     title: "Dostávejte novinky o spuštění belgické známky",

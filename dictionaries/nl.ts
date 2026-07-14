@@ -209,6 +209,22 @@ const nl: Dictionary = {
       "Details van het geplande vignet kunnen nog wijzigen. Controleer vóór de aankoop van een vignet altijd de meest recente voorwaarden via de officiële kanalen.",
     ],
   },
+  sisterSite: {
+    updatesTitle: "Laatste updates",
+    updatesText:
+      "Actueel nieuws, officiële aankondigingen en redactionele samenvattingen staan op onze zustersite — we dupliceren dat niet hier.",
+    updatesLink: "Volg het nieuws op {site} → Nieuws & updates",
+    updatesNote:
+      "Tolls.be is de meertalige referentiegids. BelgiumVignette.be volgt nieuws en praktische updates voor consumenten.",
+    newsLabel: "Nieuws & updates op BelgiumVignette.be",
+    footerTitle: "Zustersite",
+    footerGuide: "BelgiumVignette.be — nieuws & consumentengids",
+  },
+  crossBorder: {
+    title: "Grensoverschrijdende bestuurders",
+    intro:
+      "Land-specifieke gidsen voor bestuurders die België binnenrijden vanuit buurlanden — prijzen, kortetermijnvignetten en wat u kunt verwachten.",
+  },
   newsletter: {
     badge: "Blijf op de hoogte",
     title: "Ontvang updates over de start van het Belgische vignet",

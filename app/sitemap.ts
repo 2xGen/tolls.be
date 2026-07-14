@@ -17,9 +17,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: locale === i18n.defaultLocale ? 1 : 0.8,
       alternates: {
-        languages: Object.fromEntries(
-          i18n.locales.map((l) => [l, `${siteConfig.url}/${l}`]),
-        ),
+        languages: {
+          ...Object.fromEntries(
+            i18n.locales.map((l) => [l, `${siteConfig.url}/${l}`]),
+          ),
+          "x-default": `${siteConfig.url}/en`,
+        },
       },
     });
   }
@@ -33,12 +36,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
         changeFrequency: "monthly",
         priority: 0.7,
         alternates: {
-          languages: Object.fromEntries(
-            i18n.locales.map((l) => [
-              l,
-              `${siteConfig.url}/${l}/${getSlug(l, key)}`,
-            ]),
-          ),
+          languages: {
+            ...Object.fromEntries(
+              i18n.locales.map((l) => [
+                l,
+                `${siteConfig.url}/${l}/${getSlug(l, key)}`,
+              ]),
+            ),
+            "x-default": `${siteConfig.url}/en/${getSlug("en", key)}`,
+          },
         },
       });
     }
@@ -53,12 +59,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 0.3,
       alternates: {
-        languages: Object.fromEntries(
-          i18n.locales.map((l) => [
-            l,
-            `${siteConfig.url}/${l}/${legalSlugs[l].privacy}`,
-          ]),
-        ),
+        languages: {
+          ...Object.fromEntries(
+            i18n.locales.map((l) => [
+              l,
+              `${siteConfig.url}/${l}/${legalSlugs[l].privacy}`,
+            ]),
+          ),
+          "x-default": `${siteConfig.url}/en/${legalSlugs.en.privacy}`,
+        },
       },
     });
   }

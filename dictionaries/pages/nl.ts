@@ -1,4 +1,5 @@
 import type { PagesDictionary } from "@/lib/i18n/pages-types";
+import liefkenshoekTunnel from "./liefkenshoek/nl";
 
 const pages: PagesDictionary = {
   "belgium-vignette": {
@@ -206,6 +207,215 @@ const pages: PagesDictionary = {
       button: "Alle vignetinformatie bekijken",
     },
   },
+  "belgium-vignette-netherlands": {
+    navLabel: "Nederlandse bestuurders",
+    breadcrumb: "Belgisch vignet voor Nederlanders",
+    meta: {
+      title: "Belgisch vignet voor Nederlanders 2027 | Tolls.be",
+      description:
+        "Gids voor Nederlandse bestuurders: Belgisch vignet vanaf mei 2027, dagvignetten vanaf €9, ANPR-controles op NL-kentekens en wat grensoverschrijders moeten weten.",
+    },
+    h1: "Belgisch vignet voor Nederlandse bestuurders",
+    intro: [
+      "Rijdt u vanuit Nederland België in — voor werk, winkelen, vakantie of doorgaande reizen — dan geldt het geplande digitale Belgische vignet vanaf mei 2027 voor uw auto, net als voor Belgische automobilisten.",
+      "Deze pagina legt uit wat Nederlanders kunnen verwachten: waarom het vignet er komt, welke kortetermijnopties passen bij occasionele ritten en hoe automatische kentekencontroles werken voor voertuigen met een Nederlands kenteken.",
+    ],
+    blocks: [
+      {
+        heading: "Waarom dit relevant is voor Nederlanders",
+        paragraphs: [
+          "België is een belangrijk transitland. Een groot deel van de kilometers op Belgische autosnelwegen en regionale wegen wordt gereden door buitenlandse automobilisten, waaronder tienduizenden Nederlandse voertuigen per dag.",
+          "EU-regels vereisen dat België niet alleen buitenlanders laat betalen — maar het vignet raakt wel elke Nederlandse personenauto op de gedekte wegen. In de gepubliceerde plannen zit momenteel geen speciaal verlaagd tarief voor grensbewoners in Zuid-Nederland.",
+        ],
+      },
+      {
+        heading: "Korte ritten: dag- en 10-dagenvignet",
+        paragraphs: ["De meeste Nederlandse bezoekers hebben geen jaarvignet nodig. Geplande kortetermijnproducten zijn bedoeld voor occasioneel gebruik:"],
+        bullets: [
+          "1 dag — circa €9 (ideaal voor een enkele crossing of dagtrip)",
+          "10 dagen — circa €12 (korte vakantie of meerdaags bezoek)",
+          "1 maand — circa €19 · 2 maanden — circa €30",
+        ],
+      },
+      {
+        heading: "Veelvoorkomende reispatronen",
+        bullets: [
+          "Dagtrips naar Antwerpen, Gent of Belgische winkelgebieden",
+          "Doorgaande reizen naar Frankrijk, Luxemburg of Duitsland via België",
+          "Weekend- of vakantieroutes via de E19, E40 of E25",
+          "Grensoverschrijdend woon-werkverkeer vanuit Limburg of andere zuidelijke provincies",
+        ],
+      },
+      {
+        heading: "Hoe uw NL-kenteken wordt gecontroleerd",
+        paragraphs: [
+          "Het vignet is digitaal en gekoppeld aan uw kenteken — geen sticker op de voorruit. ANPR-camera's op autosnelwegen en regionale wegen moeten Nederlandse kentekens kunnen lezen en afzetten tegen het centrale register.",
+          "Koop en registreer het vignet vóór u gedekte wegen gebruikt. Na de tolerantieperiode in juli 2027 kan rijden zonder geldig vignet tot een boete leiden.",
+        ],
+      },
+      {
+        heading: "Blijf op de hoogte",
+        paragraphs: [
+          "Plannen kunnen nog wijzigen vóór EU-goedkeuring en definitieve Belgische wetgeving. Voor actueel nieuws en samenvattingen van bronnen: zustersite BelgiumVignette.be. Deze Tolls.be-pagina richt zich op stabiele referentiefeiten voor Nederlandse bestuurders.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: "Hebben Nederlandse auto's een Belgisch vignet nodig?",
+        answer:
+          "Ja. Nederlandse personenauto's tot 3,5 ton moeten naar de plannen vanaf mei 2027 een geldig vignet hebben op gedekte Belgische wegen, net als Belgische auto's.",
+      },
+      {
+        question: "Kan ik alleen een dagvignet kopen?",
+        answer:
+          "Een dagvignet van circa €9 is gepland voor occasionele gebruikers. Definitieve producten en prijzen worden vóór de lancering bevestigd.",
+      },
+      {
+        question: "Is er korting voor Nederlandse grensbewoners?",
+        answer:
+          "In de huidige gepubliceerde plannen zit geen speciaal regime voor Zuid-Nederlandse pendelaars, hoewel politieke discussie doorgaat.",
+      },
+    ],
+    relatedTitle: "Gerelateerde informatie",
+    cta: {
+      title: "Volledige referentie Belgisch vignet",
+      text: "Bekijk prijzen, vrijstellingen, handhaving en de volledige tijdlijn op de hoofdpagina's.",
+      button: "Alle vignetinformatie bekijken",
+    },
+  },
+  "belgium-vignette-germany": {
+    navLabel: "Duitse bestuurders",
+    breadcrumb: "Belgisch vignet voor Duitse bestuurders",
+    meta: {
+      title: "Belgisch vignet voor Duitse bestuurders 2027 | Tolls.be",
+      description:
+        "Gids voor Duitse bestuurders in België: digitaal vignet vanaf mei 2027, kortetermijntarieven, transitroutes en ANPR-handhaving voor DE-kentekens.",
+    },
+    h1: "Belgisch vignet voor Duitse bestuurders",
+    intro: [
+      "Duitse bestuurders die Belgische autosnelwegen of regionale wegen gebruiken — voor transit naar Frankrijk, Benelux, ferryhavens of vakantie — hebben vanaf mei 2027 het geplande digitale Belgische vignet nodig.",
+      "Deze gids behandelt geldigheidsopties, indicatieve prijzen en handhaving voor voertuigen met een Duits kenteken.",
+    ],
+    blocks: [
+      {
+        heading: "België als transitcorridor",
+        paragraphs: [
+          "Veel Duitse routes naar Frankrijk, Kanaalhavens of West-Europa lopen via België. Het vignet geldt voor wegen binnen het systeem, niet alleen voor voertuigen die in België stoppen.",
+        ],
+      },
+      {
+        heading: "Welke periode past bij u",
+        bullets: [
+          "Jaar — circa €100 bij regelmatig rijden in België",
+          "10 dagen — circa €12 voor vakantie of zakenrit",
+          "1 dag — circa €9 voor een enkele transit",
+        ],
+      },
+      {
+        heading: "Typische routes uit Duitsland",
+        bullets: [
+          "Aachen → Luik → westwaarts (E40-corridor)",
+          "Keulen/Düsseldorf richting Brussel of Antwerpen",
+          "Saarland → Luxemburg/België",
+          "Transit naar Calais of Dunkirk via België",
+        ],
+      },
+      {
+        heading: "Digitale registratie voor DE-kentekens",
+        paragraphs: [
+          "U registreert uw Duitse kenteken online bij aankoop. ANPR-handhaving is gepland op autosnelwegen en geselecteerde regionale wegen. Het vignet is nog niet te koop.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: "Hebben Duitse auto's een Belgisch vignet nodig?",
+        answer: "Ja. Buitenlandse personenauto's moeten naar de plannen een geldig vignet hebben op gedekte wegen.",
+      },
+      {
+        question: "Ik rijd één dag door België — wat heb ik nodig?",
+        answer: "Een dagvignet is gepland voor occasioneel gebruik. Bevestig definitieve producten zodra het systeem live is.",
+      },
+      {
+        question: "Dekt mijn Oostenrijkse of Zwitserse vignet België?",
+        answer: "Nee. België krijgt een eigen digitaal vignetsysteem, los van andere landen.",
+      },
+    ],
+    relatedTitle: "Gerelateerde informatie",
+    cta: {
+      title: "Volledige referentie Belgisch vignet",
+      text: "Bekijk prijzen, vrijstellingen, handhaving en de volledige tijdlijn.",
+      button: "Alle vignetinformatie bekijken",
+    },
+  },
+  "belgium-vignette-france": {
+    navLabel: "Franse bestuurders",
+    breadcrumb: "Belgisch vignet voor Franse bestuurders",
+    meta: {
+      title: "Belgisch vignet voor Franse bestuurders 2027 | Tolls.be",
+      description:
+        "Gids voor Franse bestuurders in België: digitaal vignet vanaf mei 2027, routes via Wallonië, kortetermijntarieven en kentekencontroles.",
+    },
+    h1: "Belgisch vignet voor Franse bestuurders",
+    intro: [
+      "Franse bestuurders die België binnenrijden — vanuit Rijsel en Hauts-de-France, of vakantieroutes via Wallonië — hebben vanaf mei 2027 het geplande digitale vignet nodig.",
+      "Deze pagina behandelt kortetermijnopties en handhaving voor voertuigen met een Frans kenteken.",
+    ],
+    blocks: [
+      {
+        heading: "Grensoverschrijdend vanuit Frankrijk",
+        paragraphs: [
+          "Wallonië deelt een lange grens met Frankrijk. Het vignet geldt naar de plannen voor Belgische en buitenlandse kentekens op gedekte wegen. Registratie verloopt digitaal — geen sticker aan de grens.",
+        ],
+      },
+      {
+        heading: "Kortetermijnvignetten",
+        bullets: [
+          "1 dag — circa €9",
+          "10 dagen — circa €12",
+          "1 maand — circa €19 · 2 maanden — circa €30",
+          "Jaar — circa €100 (regelmatige gebruikers)",
+        ],
+      },
+      {
+        heading: "Veelgebruikte toegangsroutes",
+        bullets: [
+          "Rijsel → Kortrijk / Gent",
+          "Charleville-Mézières → Namen / Luik",
+          "Reims → Brussel via E411/E42",
+          "Vakantieverkeer naar de Belgische kust via E40",
+        ],
+      },
+      {
+        heading: "Boetes",
+        paragraphs: [
+          "Na de tolerantieperiode tot juli 2027 kan rijden zonder geldig vignet leiden tot boetes vanaf €70. Controles via ANPR-camera's en mobiele eenheden.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: "Hebben Franse auto's een Belgisch vignet nodig?",
+        answer: "Ja. Franse personenauto's tot 3,5 ton moeten naar de plannen vanaf mei 2027 een vignet hebben.",
+      },
+      {
+        question: "Ik rij wekelijks over de grens — welk product?",
+        answer: "Regelmatige gebruikers kiezen vaak een jaarvignet; occasionele bezoekers een 10-dagen- of maandvignet.",
+      },
+      {
+        question: "Wanneer kan ik het vignet kopen?",
+        answer: "Verkoop is nog niet open. Verwachte lancering: mei 2027. Volg nieuws op BelgiumVignette.be.",
+      },
+    ],
+    relatedTitle: "Gerelateerde informatie",
+    cta: {
+      title: "Volledige referentie Belgisch vignet",
+      text: "Bekijk prijzen, vrijstellingen, handhaving en de volledige tijdlijn.",
+      button: "Alle vignetinformatie bekijken",
+    },
+  },
+  "liefkenshoek-tunnel": liefkenshoekTunnel,
   "buy-belgium-vignette": {
     navLabel: "Vignet kopen",
     breadcrumb: "Belgisch vignet kopen",

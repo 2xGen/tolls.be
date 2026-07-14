@@ -3,7 +3,7 @@ import Link from "next/link";
 import { isLocale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 import { getPagesDictionary } from "@/lib/i18n/pages-dictionaries";
-import { pageKeys, getSlug } from "@/lib/i18n/pages";
+import { crossBorderPageKeys, pageKeys, getSlug } from "@/lib/i18n/pages";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import InfoBox from "@/components/InfoBox";
@@ -14,6 +14,7 @@ import FAQ from "@/components/FAQ";
 import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
 import StructuredData from "@/components/StructuredData";
+import SisterSiteUpdates from "@/components/SisterSiteUpdates";
 import { CameraIcon, ArrowRightIcon } from "@/components/icons";
 
 export default async function HomePage({
@@ -30,7 +31,16 @@ export default async function HomePage({
   ]);
   const { what, enforcement } = dict.sections;
 
-  const topicLinks = pageKeys.map((key) => ({
+  const crossBorderSet = new Set<string>(crossBorderPageKeys);
+
+  const topicLinks = pageKeys
+    .filter((key) => !crossBorderSet.has(key))
+    .map((key) => ({
+      label: pagesDict[key].navLabel,
+      href: `/${lang}/${getSlug(lang, key)}`,
+    }));
+
+  const crossBorderLinks = crossBorderPageKeys.map((key) => ({
     label: pagesDict[key].navLabel,
     href: `/${lang}/${getSlug(lang, key)}`,
   }));
@@ -39,7 +49,7 @@ export default async function HomePage({
     <>
       <StructuredData dict={dict} locale={lang} />
 
-      <Header dict={dict} locale={lang} />
+      <Header dict={dict} locale={lang} pathname={`/${lang}`} />
 
       {/* Breadcrumb */}
       <div className="border-b border-line bg-mist">
@@ -128,12 +138,13 @@ export default async function HomePage({
 
         <FAQ dict={dict} />
 
-        {/* Sources & verification */}
+        {/* Sources & verification + sister-site updates */}
         <section
+          id="updates"
           aria-labelledby="sources-title"
           className="section bg-white"
         >
-          <div className="container-gov max-w-4xl">
+          <div className="container-gov max-w-4xl space-y-6">
             <div className="rounded-gov border border-line border-l-4 border-l-navy bg-mist p-6 sm:p-8">
               <h2
                 id="sources-title"
@@ -149,6 +160,8 @@ export default async function HomePage({
                 ))}
               </div>
             </div>
+
+            <SisterSiteUpdates dict={dict} locale={lang} embedded />
           </div>
         </section>
 
@@ -174,12 +187,37 @@ export default async function HomePage({
           </div>
         </section>
 
+        <section aria-labelledby="cross-border-title" className="section bg-white">
+          <div className="container-gov">
+            <h2 id="cross-border-title" className="section-title">
+              {dict.crossBorder.title}
+            </h2>
+            <p className="mt-3 max-w-3xl text-base leading-relaxed text-charcoal">
+              {dict.crossBorder.intro}
+            </p>
+            <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {crossBorderLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="flex h-full items-center justify-between gap-3 rounded-gov border border-line bg-mist p-5 font-semibold text-navy hover:border-navy hover:bg-white"
+                  >
+                    <span>{link.label}</span>
+                    <ArrowRightIcon className="h-5 w-5 shrink-0" />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
         <Newsletter dict={dict} locale={lang} />
       </main>
 
       <Footer
         dict={dict}
         locale={lang}
+        pathname={`/${lang}`}
         topicLinks={topicLinks}
         topicTitle={dict.header.nav[0]?.label}
       />

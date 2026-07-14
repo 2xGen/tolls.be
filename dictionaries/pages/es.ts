@@ -1,6 +1,8 @@
 import type { PagesDictionary } from "@/lib/i18n/pages-types";
+import crossBorder from "./cross-border/es";
+import liefkenshoekTunnel from "./liefkenshoek/es";
 
-const pages: PagesDictionary = {
+const pages = {
   "belgium-vignette": {
     navLabel: "Viñeta belga",
     breadcrumb: "Viñeta belga",
@@ -206,6 +208,8 @@ const pages: PagesDictionary = {
       button: "Ver toda la información de la viñeta",
     },
   },
+  ...crossBorder,
+  "liefkenshoek-tunnel": liefkenshoekTunnel,
   "buy-belgium-vignette": {
     navLabel: "Comprar viñeta",
     breadcrumb: "Comprar una viñeta belga",
@@ -277,6 +281,6 @@ const pages: PagesDictionary = {
       button: "Ver toda la información de la viñeta",
     },
   },
-};
+} satisfies PagesDictionary;
 
 export default pages;

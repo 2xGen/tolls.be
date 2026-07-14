@@ -62,14 +62,14 @@ export default function Newsletter({
   const privacyPath = getPrivacyPath(locale);
 
   return (
-    <section id="updates" aria-labelledby="updates-title" className="section bg-white">
+    <section id="newsletter" aria-labelledby="newsletter-title" className="section bg-white">
       <div className="container-gov">
         <div className="rounded-gov border-l-4 border-accent border-t border-r border-b border-line bg-mist p-6 sm:p-8">
           <p className="text-xs font-bold uppercase tracking-wide text-accent">
             {newsletter.badge}
           </p>
           <h2
-            id="updates-title"
+            id="newsletter-title"
             className="mt-2 text-xl font-bold text-navy sm:text-2xl"
           >
             {newsletter.title}

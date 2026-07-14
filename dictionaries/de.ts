@@ -209,6 +209,22 @@ const de: Dictionary = {
       "Details der geplanten Vignette können sich noch ändern. Überprüfen Sie vor dem Kauf einer Vignette stets die aktuellen Anforderungen über die offiziellen Kanäle.",
     ],
   },
+  sisterSite: {
+    updatesTitle: "Aktuelle Meldungen",
+    updatesText:
+      "Nachrichten, offizielle Ankündigungen und redaktionelle Zusammenfassungen erscheinen auf unserer Schwesterseite — nicht hier dupliziert.",
+    updatesLink: "Aktuelles auf {site} → News & Updates",
+    updatesNote:
+      "Tolls.be ist der mehrsprachige Referenzführer. BelgiumVignette.be berichtet über News und praktische Updates.",
+    newsLabel: "News & Updates auf BelgiumVignette.be",
+    footerTitle: "Schwesterseite",
+    footerGuide: "BelgiumVignette.be — News & Verbraucherführer",
+  },
+  crossBorder: {
+    title: "Grenzüberschreitende Fahrer",
+    intro:
+      "Länderspezifische Leitfäden für Fahrer, die aus Nachbarländern nach Belgien einreisen — Preise, Kurzzeitvignetten und was Sie erwartet.",
+  },
   newsletter: {
     badge: "Bleiben Sie informiert",
     title: "Erhalten Sie Updates zum Start der Belgien-Vignette",

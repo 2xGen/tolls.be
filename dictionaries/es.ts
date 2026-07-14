@@ -209,6 +209,22 @@ const es: Dictionary = {
       "Los detalles de la viñeta prevista aún pueden cambiar. Antes de comprar una viñeta, verifique siempre los requisitos más recientes a través de los canales oficiales.",
     ],
   },
+  sisterSite: {
+    updatesTitle: "Últimas actualizaciones",
+    updatesText:
+      "Noticias, anuncios oficiales y resúmenes editoriales se publican en nuestro sitio hermano — no se duplican aquí.",
+    updatesLink: "Siga las noticias en {site} → Noticias y actualizaciones",
+    updatesNote:
+      "Tolls.be es la guía de referencia multilingüe. BelgiumVignette.be cubre noticias y actualizaciones prácticas.",
+    newsLabel: "Noticias en BelgiumVignette.be",
+    footerTitle: "Sitio hermano",
+    footerGuide: "BelgiumVignette.be — noticias y guía práctica",
+  },
+  crossBorder: {
+    title: "Conductores transfronterizos",
+    intro:
+      "Guías por país para conductores que entran en Bélgica desde países vecinos — precios, viñetas de corta duración y qué esperar.",
+  },
   newsletter: {
     badge: "Manténgase informado",
     title: "Reciba novedades sobre el lanzamiento de la viñeta belga",

@@ -6,9 +6,11 @@ import LanguageSelector from "./LanguageSelector";
 export default function Header({
   dict,
   locale,
+  pathname,
 }: {
   dict: Dictionary;
   locale: Locale;
+  pathname?: string;
 }) {
   return (
     <header className="border-b border-line bg-white">
@@ -40,7 +42,11 @@ export default function Header({
         </Link>
 
         <div className="ml-auto shrink-0">
-          <LanguageSelector current={locale} label={dict.header.languageLabel} />
+          <LanguageSelector
+            current={locale}
+            label={dict.header.languageLabel}
+            pathname={pathname}
+          />
         </div>
       </div>
 

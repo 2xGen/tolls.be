@@ -77,6 +77,19 @@ export interface Dictionary {
     title: string;
     paragraphs: string[];
   };
+  sisterSite: {
+    updatesTitle: string;
+    updatesText: string;
+    updatesLink: string;
+    updatesNote: string;
+    newsLabel: string;
+    footerTitle: string;
+    footerGuide: string;
+  };
+  crossBorder: {
+    title: string;
+    intro: string;
+  };
   newsletter: {
     badge: string;
     title: string;

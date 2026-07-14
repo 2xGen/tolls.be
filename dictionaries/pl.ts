@@ -209,6 +209,22 @@ const pl: Dictionary = {
       "Szczegóły planowanej winiety mogą się jeszcze zmienić. Przed zakupem winiety zawsze sprawdzaj najnowsze wymagania w oficjalnych kanałach.",
     ],
   },
+  sisterSite: {
+    updatesTitle: "Najnowsze aktualizacje",
+    updatesText:
+      "Wiadomości, oficjalne komunikaty i redakcyjne podsumowania publikujemy na naszej siostrzanej stronie — nie duplikujemy ich tutaj.",
+    updatesLink: "Śledź wiadomości na {site} → Aktualności",
+    updatesNote:
+      "Tolls.be to wielojęzyczny przewodnik referencyjny. BelgiumVignette.be obejmuje wiadomości i praktyczne aktualizacje.",
+    newsLabel: "Aktualności na BelgiumVignette.be",
+    footerTitle: "Strona siostrzana",
+    footerGuide: "BelgiumVignette.be — wiadomości i przewodnik",
+  },
+  crossBorder: {
+    title: "Kierowcy transgraniczni",
+    intro:
+      "Przewodniki dla kierowców wjeżdżających do Belgii z krajów sąsiednich — ceny, winiety krótkoterminowe i praktyczne informacje.",
+  },
   newsletter: {
     badge: "Bądź na bieżąco",
     title: "Otrzymuj aktualności o starcie belgijskiej winiety",

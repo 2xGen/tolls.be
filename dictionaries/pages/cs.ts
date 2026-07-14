@@ -1,6 +1,8 @@
 import type { PagesDictionary } from "@/lib/i18n/pages-types";
+import crossBorder from "./cross-border/cs";
+import liefkenshoekTunnel from "./liefkenshoek/cs";
 
-const pages: PagesDictionary = {
+const pages = {
   "belgium-vignette": {
     navLabel: "Belgická známka",
     breadcrumb: "Belgická známka",
@@ -206,6 +208,8 @@ const pages: PagesDictionary = {
       button: "Zobrazit všechny informace o známce",
     },
   },
+  ...crossBorder,
+  "liefkenshoek-tunnel": liefkenshoekTunnel,
   "buy-belgium-vignette": {
     navLabel: "Koupit známku",
     breadcrumb: "Koupit belgickou známku",
@@ -277,6 +281,6 @@ const pages: PagesDictionary = {
       button: "Zobrazit všechny informace o známce",
     },
   },
-};
+} satisfies PagesDictionary;
 
 export default pages;

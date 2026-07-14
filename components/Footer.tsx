@@ -1,17 +1,24 @@
 import Link from "next/link";
 import type { Dictionary, NavItem } from "@/lib/i18n/types";
-import { i18n, localeNames, type Locale } from "@/lib/i18n/config";
+import { type Locale } from "@/lib/i18n/config";
 import { getPrivacyPath } from "@/lib/i18n/legal";
+import {
+  getBelgiumVignetteHomeUrl,
+  getSisterNewsUrl,
+} from "@/lib/sister-sites";
 import ManageCookiesButton from "@/components/cookies/ManageCookiesButton";
+import FooterLocaleLinks from "@/components/FooterLocaleLinks";
 
 export default function Footer({
   dict,
   locale,
+  pathname,
   topicLinks,
   topicTitle,
 }: {
   dict: Dictionary;
   locale: Locale;
+  pathname?: string;
   topicLinks?: NavItem[];
   topicTitle?: string;
 }) {
@@ -22,7 +29,7 @@ export default function Footer({
     <footer className="border-t-4 border-accent bg-navy text-white">
       <div
         className={`container-gov grid gap-10 py-12 md:grid-cols-2 ${
-          hasTopics ? "lg:grid-cols-4" : "md:grid-cols-3"
+          hasTopics ? "lg:grid-cols-5" : "lg:grid-cols-4"
         }`}
       >
         <div>
@@ -78,26 +85,37 @@ export default function Footer({
           </ul>
         </nav>
 
+        <nav aria-label={dict.sisterSite.footerTitle}>
+          <h2 className="text-sm font-bold uppercase tracking-wide text-white/60">
+            {dict.sisterSite.footerTitle}
+          </h2>
+          <ul className="mt-4 space-y-2">
+            <li>
+              <a
+                href={getBelgiumVignetteHomeUrl(locale)}
+                className="text-sm text-white/90 underline-offset-4 hover:text-white hover:underline"
+                rel="noopener noreferrer"
+              >
+                {dict.sisterSite.footerGuide}
+              </a>
+            </li>
+            <li>
+              <a
+                href={getSisterNewsUrl(locale)}
+                className="text-sm text-white/90 underline-offset-4 hover:text-white hover:underline"
+                rel="noopener noreferrer"
+              >
+                {dict.sisterSite.newsLabel}
+              </a>
+            </li>
+          </ul>
+        </nav>
+
         <nav aria-label={dict.footer.languagesTitle}>
           <h2 className="text-sm font-bold uppercase tracking-wide text-white/60">
             {dict.footer.languagesTitle}
           </h2>
-          <ul className="mt-4 space-y-2">
-            {i18n.locales.map((l) => (
-              <li key={l}>
-                <Link
-                  href={`/${l}`}
-                  hrefLang={l}
-                  aria-current={l === locale ? "true" : undefined}
-                  className={`text-sm underline-offset-4 hover:text-white hover:underline ${
-                    l === locale ? "font-semibold text-white" : "text-white/90"
-                  }`}
-                >
-                  {localeNames[l]}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <FooterLocaleLinks current={locale} pathname={pathname} />
         </nav>
       </div>
 

@@ -209,6 +209,22 @@ const fr: Dictionary = {
       "Les détails de la vignette prévue peuvent encore changer. Avant d'acheter une vignette, vérifiez toujours les conditions les plus récentes via les canaux officiels.",
     ],
   },
+  sisterSite: {
+    updatesTitle: "Dernières mises à jour",
+    updatesText:
+      "Les actualités, annonces officielles et résumés éditoriaux sont publiés sur notre site sœur — pas dupliqués ici.",
+    updatesLink: "Suivez l'actualité sur {site} → Actualités",
+    updatesNote:
+      "Tolls.be est le guide de référence multilingue. BelgiumVignette.be couvre l'actualité et les mises à jour pratiques.",
+    newsLabel: "Actualités sur BelgiumVignette.be",
+    footerTitle: "Site sœur",
+    footerGuide: "BelgiumVignette.be — actualités & guide pratique",
+  },
+  crossBorder: {
+    title: "Conducteurs transfrontaliers",
+    intro:
+      "Guides par pays pour les conducteurs entrant en Belgique depuis les pays voisins — tarifs, vignettes courte durée et points pratiques.",
+  },
   newsletter: {
     badge: "Restez informé",
     title: "Recevez des mises à jour sur le lancement de la vignette belge",

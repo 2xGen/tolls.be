@@ -19,6 +19,8 @@ export default function LegalPageView({
   content: LegalPageContent;
   pageUrl: string;
 }) {
+  const pathname = pageUrl.replace(siteConfig.url, "") || `/${locale}`;
+
   return (
     <>
       <PageStructuredData
@@ -33,7 +35,7 @@ export default function LegalPageView({
         faq={[]}
       />
 
-      <Header dict={dict} locale={locale} />
+      <Header dict={dict} locale={locale} pathname={pathname} />
 
       <div className="border-b border-line bg-mist">
         <nav aria-label="Breadcrumb" className="container-gov py-2.5">
@@ -108,7 +110,7 @@ export default function LegalPageView({
         </section>
       </main>
 
-      <Footer dict={dict} locale={locale} />
+      <Footer dict={dict} locale={locale} pathname={pathname} />
     </>
   );
 }

@@ -1,4 +1,5 @@
 import type { PagesDictionary } from "@/lib/i18n/pages-types";
+import liefkenshoekTunnel from "./liefkenshoek/en";
 
 const pages: PagesDictionary = {
   "belgium-vignette": {
@@ -206,6 +207,229 @@ const pages: PagesDictionary = {
       button: "View all vignette information",
     },
   },
+  "belgium-vignette-netherlands": {
+    navLabel: "Dutch drivers",
+    breadcrumb: "Belgium vignette for Dutch drivers",
+    meta: {
+      title: "Belgium Vignette for Dutch Drivers 2027 | Tolls.be",
+      description:
+        "Guide for Dutch drivers: Belgium vignette from May 2027, short-term options from €9, ANPR checks on NL plates, and what border crossers should plan for.",
+    },
+    h1: "Belgium Vignette for Dutch Drivers",
+    intro: [
+      "If you drive from the Netherlands into Belgium — for work, shopping, holidays or a transit route — the planned digital Belgium vignette will apply to your car from May 2027, just like for Belgian motorists.",
+      "This page explains what Dutch drivers should expect: why the vignette exists, which short-term options suit occasional trips, and how automatic plate checks will work for Dutch-registered vehicles.",
+    ],
+    blocks: [
+      {
+        heading: "Why this matters for Dutch drivers",
+        paragraphs: [
+          "Belgium is a major transit country. A large share of kilometres on Belgian motorways and regional roads is driven by foreign motorists, including tens of thousands of Dutch vehicles every day.",
+          "EU rules mean Belgium cannot charge only foreigners — but the vignette still affects every Dutch passenger car using covered roads. There is currently no special reduced regime for southern Dutch border commuters in the published plans.",
+        ],
+      },
+      {
+        heading: "Short trips: day and 10-day vignettes",
+        paragraphs: [
+          "Most Dutch visitors will not need a full-year vignette. Planned short-term products are designed for occasional use:",
+        ],
+        bullets: [
+          "1 day — around €9 (ideal for a single crossing or day trip)",
+          "10 days — around €12 (short holiday or multi-day visit)",
+          "1 month — around €19 · 2 months — around €30",
+        ],
+      },
+      {
+        heading: "Common Dutch travel patterns",
+        bullets: [
+          "Day trips to Antwerp, Gent or Belgian shopping areas",
+          "Transit to France, Luxembourg or Germany through Belgium",
+          "Weekend or holiday routes via the E19, E40 or E25",
+          "Cross-border commuting from Limburg or other southern NL provinces",
+        ],
+      },
+      {
+        heading: "How your Dutch plate will be checked",
+        paragraphs: [
+          "The vignette is digital and linked to your licence plate — no windscreen sticker. ANPR cameras on motorways and regional roads are planned to read Dutch plates and match them against the central register.",
+          "Make sure you buy and register the vignette before entering covered roads. After the tolerance period ends in July 2027, driving without one may result in a fine.",
+        ],
+      },
+      {
+        heading: "Stay informed",
+        paragraphs: [
+          "Plans can still change before EU approval and final Belgian legislation. For breaking news and source summaries, see our sister site BelgiumVignette.be. This Tolls.be page focuses on the stable reference facts Dutch drivers need.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: "Do Dutch cars need a Belgium vignette?",
+        answer:
+          "Yes. Dutch-registered passenger cars up to 3.5 tonnes are expected to need a valid vignette on covered Belgian roads from May 2027, the same as Belgian cars.",
+      },
+      {
+        question: "Can I buy only a one-day vignette?",
+        answer:
+          "A one-day vignette for around €9 is planned for occasional users. Final products and prices will be confirmed before launch.",
+      },
+      {
+        question: "Is there a discount for Dutch border residents?",
+        answer:
+          "No special regime for southern Dutch commuters has been included in the current published plans, although political discussion continues.",
+      },
+    ],
+    relatedTitle: "Related information",
+    cta: {
+      title: "Full Belgium vignette reference",
+      text: "See prices, exemptions, enforcement and the complete timeline on the main information pages.",
+      button: "View all vignette information",
+    },
+  },
+  "belgium-vignette-germany": {
+    navLabel: "German drivers",
+    breadcrumb: "Belgium vignette for German drivers",
+    meta: {
+      title: "Belgium Vignette for German Drivers 2027 | Tolls.be",
+      description:
+        "Guide for German drivers crossing into Belgium: digital vignette from May 2027, short-term rates, transit routes and ANPR enforcement for DE licence plates.",
+    },
+    h1: "Belgium Vignette for German Drivers",
+    intro: [
+      "Drivers from Germany who use Belgian motorways or regional roads — whether for transit to France, the Benelux, the UK ferry ports, or leisure trips — will need the planned digital Belgium vignette from May 2027.",
+      "This guide covers what German motorists should know before crossing the border: validity options, indicative prices, and how enforcement applies to German-registered plates.",
+    ],
+    blocks: [
+      {
+        heading: "Belgium as a transit corridor",
+        paragraphs: [
+          "Many German routes to France, the Channel ports or western Europe pass through Belgium. The vignette applies to the roads covered by the system, not only to vehicles stopping in Belgium.",
+          "Passenger cars up to 3.5 tonnes are in scope. Motorcycles, trucks (separate kilometre-charge system) and emergency vehicles are expected to be exempt.",
+        ],
+      },
+      {
+        heading: "Which vignette period makes sense",
+        paragraphs: [
+          "Choose based on how often you use Belgian roads in a year:",
+        ],
+        bullets: [
+          "Annual — around €100 if you regularly drive in Belgium",
+          "10 days — around €12 for a holiday or business trip",
+          "1 day — around €9 for a single transit or stopover",
+        ],
+      },
+      {
+        heading: "Typical routes from Germany",
+        bullets: [
+          "Aachen area → Liège → westbound (E40 corridor)",
+          "Cologne/Düsseldorf direction → Brussels or Antwerp",
+          "Saarland → Luxembourg/Belgium cross-border travel",
+          "Transit to Calais or Dunkirk ferry routes via Belgium",
+        ],
+      },
+      {
+        heading: "Digital registration for DE plates",
+        paragraphs: [
+          "You register your German licence plate online when purchasing. There is nothing to affix to the vehicle. ANPR enforcement is planned on both motorways and selected regional roads.",
+          "Buy through official channels once sales open — the vignette is not yet available.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: "Do German-registered cars need a Belgium vignette?",
+        answer:
+          "Yes. Foreign passenger cars are expected to need a valid vignette on covered roads, including German-registered vehicles.",
+      },
+      {
+        question: "I only transit Belgium in one day — what do I need?",
+        answer:
+          "A one-day vignette is planned for occasional use. Confirm final products before travel once the system is live.",
+      },
+      {
+        question: "Does my Austrian or Swiss vignette cover Belgium?",
+        answer:
+          "No. Belgium operates its own planned digital vignette system, separate from Austria, Switzerland or other countries.",
+      },
+    ],
+    relatedTitle: "Related information",
+    cta: {
+      title: "Full Belgium vignette reference",
+      text: "See prices, exemptions, enforcement and the complete timeline on the main information pages.",
+      button: "View all vignette information",
+    },
+  },
+  "belgium-vignette-france": {
+    navLabel: "French drivers",
+    breadcrumb: "Belgium vignette for French drivers",
+    meta: {
+      title: "Belgium Vignette for French Drivers 2027 | Tolls.be",
+      description:
+        "Guide for French drivers entering Belgium: planned digital vignette from May 2027, Wallonia and Brussels routes, short-term prices and plate-based enforcement.",
+    },
+    h1: "Belgium Vignette for French Drivers",
+    intro: [
+      "French drivers who enter Belgium — from Lille and Hauts-de-France, Paris via the Thalys corridor roads, or holiday routes through Wallonia — will need the planned digital vignette for passenger cars from May 2027.",
+      "This page summarises what the system means for French-registered vehicles, including short-term options and how compliance will be monitored.",
+    ],
+    blocks: [
+      {
+        heading: "Cross-border travel from France",
+        paragraphs: [
+          "Wallonia shares a long border with France. Many French motorists cross daily for work, family visits or shopping. The vignette is expected to apply equally to Belgian and foreign plates on covered roads.",
+          "Because the system is digital, French drivers register their plate before travel — there is no sticker to collect at the border.",
+        ],
+      },
+      {
+        heading: "Short-term vignettes for occasional visits",
+        bullets: [
+          "1 day — around €9",
+          "10 days — around €12",
+          "1 month — around €19 · 2 months — around €30",
+          "Annual — around €100 (regular cross-border users)",
+        ],
+      },
+      {
+        heading: "Frequent French entry points",
+        bullets: [
+          "Lille → Kortrijk / Gent corridor",
+          "Charleville-Mézières → Namur / Liège",
+          "Reims → Brussels via the E411/E42",
+          "Holiday traffic to the Belgian coast via E40",
+        ],
+      },
+      {
+        heading: "Enforcement and fines",
+        paragraphs: [
+          "After a tolerance period until July 2027, driving without a valid vignette may lead to fines from €70 upwards on repeat offences. Checks are planned via ANPR cameras and mobile units reading French plates.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: "Do French cars need a Belgium vignette?",
+        answer:
+          "Yes. French-registered passenger cars up to 3.5 tonnes are expected to need a vignette on covered Belgian roads from May 2027.",
+      },
+      {
+        question: "I live near the border and cross weekly — which product fits?",
+        answer:
+          "Regular crossers may prefer an annual vignette; occasional visitors can use 10-day or monthly options. Compare indicative prices on our price page.",
+      },
+      {
+        question: "When can I buy the vignette?",
+        answer:
+          "Sales are not open yet. The system is expected to launch in May 2027. Subscribe for updates or follow news on BelgiumVignette.be.",
+      },
+    ],
+    relatedTitle: "Related information",
+    cta: {
+      title: "Full Belgium vignette reference",
+      text: "See prices, exemptions, enforcement and the complete timeline on the main information pages.",
+      button: "View all vignette information",
+    },
+  },
+  "liefkenshoek-tunnel": liefkenshoekTunnel,
   "buy-belgium-vignette": {
     navLabel: "Buy Vignette",
     breadcrumb: "Buy a Belgium Vignette",

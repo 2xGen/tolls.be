@@ -206,6 +206,22 @@ const en: Dictionary = {
       "Details of the planned vignette may still change. Before purchasing a vignette, always verify the latest requirements through official channels.",
     ],
   },
+  sisterSite: {
+    updatesTitle: "Latest updates",
+    updatesText:
+      "Breaking news, official announcements and editorial summaries are published on our sister site — not duplicated here.",
+    updatesLink: "Follow breaking news on {site} → News & updates",
+    updatesNote:
+      "Tolls.be is the multilingual reference guide. BelgiumVignette.be covers news and consumer-focused updates in Dutch and other languages.",
+    newsLabel: "News & updates on BelgiumVignette.be",
+    footerTitle: "Sister site",
+    footerGuide: "BelgiumVignette.be — news & consumer guide",
+  },
+  crossBorder: {
+    title: "Cross-border drivers",
+    intro:
+      "Country-specific guides for drivers entering Belgium from neighbouring countries — prices, short-term vignettes and what to expect.",
+  },
   newsletter: {
     badge: "Stay informed",
     title: "Receive updates about the Belgium vignette launch",
