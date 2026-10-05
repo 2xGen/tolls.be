@@ -248,6 +248,7 @@ const nl: Dictionary = {
     links: [
       { label: "Over ons", href: "#" },
       { label: "Contact", href: "mailto:info@tolls.be" },
+      { label: "Overnemen", href: "#acquisition" },
       { label: "Privacybeleid", href: "#privacy" },
     ],
     languagesTitle: "Talen",

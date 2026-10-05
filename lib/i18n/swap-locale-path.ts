@@ -1,6 +1,10 @@
 import { i18n, type Locale } from "./config";
 import { getPageKeyBySlug, getSlug } from "./pages";
 import { getLegalKeyBySlug, getLegalSlug } from "./legal";
+import {
+  getAcquisitionKeyBySlug,
+  getAcquisitionSlug,
+} from "./acquisition";
 
 /**
  * Build the equivalent URL in another locale, mapping localised slugs
@@ -24,6 +28,11 @@ export function swapLocalePath(pathname: string, target: Locale): string {
   const legalKey = getLegalKeyBySlug(currentLocale, slug);
   if (legalKey) {
     return `/${target}/${getLegalSlug(target, legalKey)}`;
+  }
+
+  const acquisitionKey = getAcquisitionKeyBySlug(currentLocale, slug);
+  if (acquisitionKey) {
+    return `/${target}/${getAcquisitionSlug(target, acquisitionKey)}`;
   }
 
   const pageKey = getPageKeyBySlug(currentLocale, slug);

@@ -248,6 +248,7 @@ const cs: Dictionary = {
     links: [
       { label: "O nás", href: "#" },
       { label: "Kontakt", href: "mailto:info@tolls.be" },
+      { label: "Převzetí", href: "#acquisition" },
       { label: "Zásady ochrany osobních údajů", href: "#privacy" },
     ],
     languagesTitle: "Jazyky",

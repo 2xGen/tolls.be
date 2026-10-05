@@ -9,15 +9,21 @@ import {
   legalSlugs,
   getLegalKeyBySlug,
   getLegalSlug,
-  type LegalPageKey,
 } from "@/lib/i18n/legal";
 import { getLegalDictionary } from "@/lib/i18n/legal-dictionaries";
+import {
+  acquisitionSlugs,
+  getAcquisitionKeyBySlug,
+  getAcquisitionSlug,
+} from "@/lib/i18n/acquisition";
+import { getAcquisitionDictionary } from "@/lib/i18n/acquisition-dictionaries";
 import { siteConfig } from "@/lib/site";
 import { getSharedOgMetadata } from "@/lib/metadata";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter";
 import LegalPageView from "@/components/LegalPageView";
+import AcquisitionPageView from "@/components/AcquisitionPageView";
 import InfoBox from "@/components/InfoBox";
 import Timeline from "@/components/Timeline";
 import PricingTable from "@/components/PricingTable";
@@ -33,6 +39,7 @@ export function generateStaticParams() {
       params.push({ lang, slug: pageSlugs[lang][key] });
     }
     params.push({ lang, slug: legalSlugs[lang].privacy });
+    params.push({ lang, slug: acquisitionSlugs[lang].acquisition });
   }
   return params;
 }
@@ -62,6 +69,45 @@ export async function generateMetadata({
         languages: {
           ...languages,
           "x-default": `/en/${getLegalSlug("en", legalKey)}`,
+        },
+      },
+      openGraph: {
+        type: "website",
+        siteName: siteConfig.name,
+        locale: ogLocales[lang],
+        url: path,
+        title: content.meta.title,
+        description: content.meta.description,
+        ...sharedOg.openGraph,
+      },
+      twitter: {
+        title: content.meta.title,
+        description: content.meta.description,
+        ...sharedOg.twitter,
+      },
+      robots: { index: true, follow: true },
+    };
+  }
+
+  const acquisitionKey = getAcquisitionKeyBySlug(lang, slug);
+  if (acquisitionKey) {
+    const acquisitionDict = await getAcquisitionDictionary(lang);
+    const content = acquisitionDict[acquisitionKey];
+    const path = `/${lang}/${slug}`;
+    const languages = Object.fromEntries(
+      i18n.locales.map((l) => [
+        l,
+        `/${l}/${getAcquisitionSlug(l, acquisitionKey)}`,
+      ]),
+    );
+    return {
+      title: content.meta.title,
+      description: content.meta.description,
+      alternates: {
+        canonical: path,
+        languages: {
+          ...languages,
+          "x-default": `/en/${getAcquisitionSlug("en", acquisitionKey)}`,
         },
       },
       openGraph: {
@@ -142,6 +188,23 @@ export default async function SlugPage({
         dict={dict}
         locale={lang}
         content={legalDict[legalKey]}
+        pageUrl={pageUrl}
+      />
+    );
+  }
+
+  const acquisitionKey = getAcquisitionKeyBySlug(lang, slug);
+  if (acquisitionKey) {
+    const [dict, acquisitionDict] = await Promise.all([
+      getDictionary(lang),
+      getAcquisitionDictionary(lang),
+    ]);
+    const pageUrl = `${siteConfig.url}/${lang}/${slug}`;
+    return (
+      <AcquisitionPageView
+        dict={dict}
+        locale={lang}
+        content={acquisitionDict[acquisitionKey]}
         pageUrl={pageUrl}
       />
     );

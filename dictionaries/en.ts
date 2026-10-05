@@ -245,6 +245,7 @@ const en: Dictionary = {
     links: [
       { label: "About", href: "#" },
       { label: "Contact", href: "mailto:info@tolls.be" },
+      { label: "Acquisition", href: "#acquisition" },
       { label: "Privacy Policy", href: "#privacy" },
     ],
     languagesTitle: "Languages",

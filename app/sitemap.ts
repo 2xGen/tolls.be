@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { i18n } from "@/lib/i18n/config";
 import { pageKeys, getSlug } from "@/lib/i18n/pages";
 import { legalSlugs } from "@/lib/i18n/legal";
+import { acquisitionSlugs } from "@/lib/i18n/acquisition";
 import { siteConfig } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -67,6 +68,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
             ]),
           ),
           "x-default": `${siteConfig.url}/en/${legalSlugs.en.privacy}`,
+        },
+      },
+    });
+  }
+
+  // Acquisition page per locale.
+  for (const locale of i18n.locales) {
+    const slug = acquisitionSlugs[locale].acquisition;
+    entries.push({
+      url: `${siteConfig.url}/${locale}/${slug}`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.4,
+      alternates: {
+        languages: {
+          ...Object.fromEntries(
+            i18n.locales.map((l) => [
+              l,
+              `${siteConfig.url}/${l}/${acquisitionSlugs[l].acquisition}`,
+            ]),
+          ),
+          "x-default": `${siteConfig.url}/en/${acquisitionSlugs.en.acquisition}`,
         },
       },
     });

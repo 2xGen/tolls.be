@@ -2,12 +2,19 @@ import Link from "next/link";
 import type { Dictionary, NavItem } from "@/lib/i18n/types";
 import { type Locale } from "@/lib/i18n/config";
 import { getPrivacyPath } from "@/lib/i18n/legal";
+import { getAcquisitionPath } from "@/lib/i18n/acquisition";
 import {
   getBelgiumVignetteHomeUrl,
   getSisterNewsUrl,
 } from "@/lib/sister-sites";
 import ManageCookiesButton from "@/components/cookies/ManageCookiesButton";
 import FooterLocaleLinks from "@/components/FooterLocaleLinks";
+
+function resolveFooterHref(href: string, locale: Locale): string {
+  if (href === "#privacy") return getPrivacyPath(locale);
+  if (href === "#acquisition") return getAcquisitionPath(locale);
+  return href;
+}
 
 export default function Footer({
   dict,
@@ -70,9 +77,7 @@ export default function Footer({
             {dict.footer.links.map((link) => (
               <li key={link.label}>
                 <Link
-                  href={
-                    link.href === "#privacy" ? getPrivacyPath(locale) : link.href
-                  }
+                  href={resolveFooterHref(link.href, locale)}
                   className="text-sm text-white/90 underline-offset-4 hover:text-white hover:underline"
                 >
                   {link.label}

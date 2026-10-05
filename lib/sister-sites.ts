@@ -34,6 +34,12 @@ export function getBelgiumVignetteHomeUrl(locale: Locale): string {
   return `${belgiumVignetteSite.baseUrl}/${locale}`;
 }
 
+/** Acquisition / for-sale page on BelgiumVignette.be (same slug in all locales). */
+export function getBelgiumVignetteAcquisitionUrl(locale: Locale): string {
+  const supported = i18n.locales.includes(locale) ? locale : "nl";
+  return `${belgiumVignetteSite.baseUrl}/${supported}/acquisition`;
+}
+
 /** Locale-aware sister-site URL with fallback to Dutch (primary BV locale). */
 export function getSisterNewsUrl(locale: Locale): string {
   if (i18n.locales.includes(locale)) {
